@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "poopstuff:item/Slimy_Poop"
+    "layer0": "poop-and-stuff:item/slimy_poop"
   }
 }

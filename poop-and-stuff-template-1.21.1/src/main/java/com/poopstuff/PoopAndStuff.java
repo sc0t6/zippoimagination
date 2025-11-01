@@ -1,6 +1,7 @@
 package com.poopstuff;
 
 import com.poopstuff.item.ModItems;
+import com.poopstuff.block.ModBlocks;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ public class PoopAndStuff implements ModInitializer {
 	@Override
 	public void onInitialize() {
         ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
 		LOGGER.info("THIS MOD IS IN BETA");
 	}
 }

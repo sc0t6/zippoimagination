@@ -3,9 +3,9 @@
 	"id": "poop-and-stuff",
 	"version": "${version}",
 	"name": "Poop-And-Stuff",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A poop mod I made just for fun.",
 	"authors": [
-		"Me!"
+		"sc0t6"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
