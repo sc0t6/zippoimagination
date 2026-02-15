@@ -75,11 +75,11 @@ This mod provides what I have imagined and some stupid stuff that basically suck
   <summary>Eatables</summary>
 
  List:
- > Soil - gives you a bit of nausea
-> Snow - Nausea
-> Sand - Nausea
-> Dust - Nausea
-> Flowers - Nausea after 3 eaten + if eaten leaves you get nausea after eating too much around 6-10
+ Soil - gives you a bit of nausea
+ Snow - Nausea
+ Sand - Nausea
+ Dust - Nausea
+ Flowers - Nausea after 3 eaten + if eaten leaves you get nausea after eating too much around 6-10
 
  </details>
 
