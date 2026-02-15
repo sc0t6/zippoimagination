@@ -87,5 +87,24 @@ This mod provides what I have imagined and some stupid stuff that basically suck
 
 Just get it from the releases on the right or if your on mobile, scroll down till you see releases.
 
+# F.A.Q.
+
+
+### Will this ever be backported?
+Answer: **Most likely yes**
+
+### What do I do if theres a bug?
+Answer: **Make an issue on this github** or **send me a text on discord** (mc.zippo) for the bug
+
+### Will this be on other mod loaders?
+Answer: **Maybe.** it will be VERY hard but I will try to. If your a developer you can maybe help me :)
+
+### How can I get the items and use the mod?
+Answer: It's either you can go in **creative** or just **craft/find them in survival** which is pretty easy to find or craft for some items and others. **Ray Gun and its ammo** is probably the **hardest** on this list.
+
+### Is there gonna be more items/blocks/entities?
+Answer: **Yes.** Sometimes though the updates will just be bug fixes or some improvements.
+
+
 
  
