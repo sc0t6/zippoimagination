@@ -1,4 +1,5 @@
 # Zippo's Imagination
+![](https://img.shields.io/github/downloads/sc0t6/zippoimagination/total)
 > [!CAUTION]
 > This mod is still in beta, which means that there will be bugs and some incompatiablities.
 This mod provides what I have imagined and some stupid stuff that basically sucked in general but could also be funny for some people.
