@@ -2,7 +2,7 @@
 
 This mod provides what I have imagined and some stupid stuff that basically sucked in general.
 
-<!-- The Poop Mod
+The Poop Mod
 
 ### Throwable Poop
 - Throw poop at targets
@@ -16,8 +16,6 @@ This mod provides what I have imagined and some stupid stuff that basically suck
 ### Slimy Poop
 - Drinkable poop variant
 - Inflicts Poison and Nausea effects when consumed
--->
-
 
 > [!CAUTION]
 > This mod is still in beta, which means that there will be bugs and some incompatiablities.
