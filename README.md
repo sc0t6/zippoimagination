@@ -5,6 +5,7 @@ This mod provides what I have imagined and some stupid stuff that basically suck
 
 <details>
  <summary>Poop Mod Category</summary>
+ 
 ### Throwable Poop
 - Throw poop at targets
 - Inflicts Nausea effect on hit
