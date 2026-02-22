@@ -2,7 +2,11 @@ package com.poopstuff;
 
 import com.poopstuff.commands.GivePoopCommand;
 import com.poopstuff.commands.PoopMenuCommand;
+import com.poopstuff.listeners.CameraListener;
+import com.poopstuff.listeners.EatablesListener;
 import com.poopstuff.listeners.PlaceablePoopListener;
+import com.poopstuff.listeners.PlayerPoopListener;
+import com.poopstuff.listeners.RayGunListener;
 import com.poopstuff.listeners.SlimyPoopListener;
 import com.poopstuff.listeners.ThrowablePoopListener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,6 +29,10 @@ public class PoopPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ThrowablePoopListener(), this);
         getServer().getPluginManager().registerEvents(new PlaceablePoopListener(), this);
         getServer().getPluginManager().registerEvents(new SlimyPoopListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerPoopListener(), this);
+        getServer().getPluginManager().registerEvents(new RayGunListener(), this);
+        getServer().getPluginManager().registerEvents(new CameraListener(), this);
+        getServer().getPluginManager().registerEvents(new EatablesListener(), this);
 
         getLogger().info("The Poop Mod has been enabled! Type /poopmenu to get started!");
     }

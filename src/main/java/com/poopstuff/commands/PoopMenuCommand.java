@@ -1,6 +1,8 @@
 package com.poopstuff.commands;
 
+import com.poopstuff.items.CameraItems;
 import com.poopstuff.items.PoopItems;
+import com.poopstuff.items.RayGunItems;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -22,7 +24,7 @@ import java.util.Arrays;
  */
 public class PoopMenuCommand implements CommandExecutor, Listener {
 
-    private static final String MENU_TITLE = "§6§l💩 The Poop Mod Menu";
+    private static final String MENU_TITLE = "§6§lZippo's Imagination Menu";
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -46,37 +48,46 @@ public class PoopMenuCommand implements CommandExecutor, Listener {
      * Opens the Poop Menu GUI for the player
      */
     private void openPoopMenu(Player player) {
-        // Create a 3x9 (27 slot) inventory
-        Inventory menu = Bukkit.createInventory(null, 27, MENU_TITLE);
+        // Create a 6x9 (54 slot) inventory
+        Inventory menu = Bukkit.createInventory(null, 54, MENU_TITLE);
 
-        // Add decorative borders
-        ItemStack border = createBorderItem();
-        for (int i = 0; i < 27; i++) {
-            if (i < 9 || i >= 18 || i % 9 == 0 || i % 9 == 8) {
-                menu.setItem(i, border);
-            }
-        }
+        // Add category headers
+        menu.setItem(4, createCategoryItem(Material.BROWN_MUSHROOM, "§6§lPoop Category"));
+        menu.setItem(13, createCategoryItem(Material.BLAZE_ROD, "§b§lRay Guns"));
+        menu.setItem(22, createCategoryItem(Material.TRIPWIRE_HOOK, "§e§lCameras"));
 
-        // Add poop items in the center
+        // Poop items (Row 2)
         menu.setItem(10, PoopItems.createThrowablePoop());
-        menu.setItem(13, PoopItems.createPlaceablePoop());
-        menu.setItem(16, PoopItems.createSlimyPoop());
+        menu.setItem(11, PoopItems.createPlaceablePoop());
+        menu.setItem(12, PoopItems.createSlimyPoop());
 
-        // Add info item
-        menu.setItem(22, createInfoItem());
+        // Ray Guns (Row 3)
+        menu.setItem(19, RayGunItems.createShrinkRay());
+        menu.setItem(20, RayGunItems.createGrowRay());
+        menu.setItem(21, RayGunItems.createNormalRay());
+        menu.setItem(23, RayGunItems.createRayGun());
+        menu.setItem(24, RayGunItems.createRayGunAmmo());
+
+        // Cameras (Row 4)
+        menu.setItem(28, CameraItems.createCamera());
+        menu.setItem(29, CameraItems.createSecurityCamera());
+        menu.setItem(30, CameraItems.createTablet());
+
+        // Info item
+        menu.setItem(49, createInfoItem());
 
         player.openInventory(menu);
-        player.sendMessage("§6Welcome to the Poop Mod! §eClick items to receive them.");
+        player.sendMessage("§6Welcome to Zippo's Imagination! §eClick items to receive them.");
     }
 
     /**
-     * Creates a decorative border item
+     * Creates a category header item
      */
-    private ItemStack createBorderItem() {
-        ItemStack item = new ItemStack(Material.BROWN_STAINED_GLASS_PANE);
+    private ItemStack createCategoryItem(Material material, String name) {
+        ItemStack item = new ItemStack(material);
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
-            meta.setDisplayName(" ");
+            meta.setDisplayName(name);
             item.setItemMeta(meta);
         }
         return item;
@@ -86,20 +97,31 @@ public class PoopMenuCommand implements CommandExecutor, Listener {
      * Creates an info item explaining the menu
      */
     private ItemStack createInfoItem() {
-        ItemStack item = new ItemStack(Material.BOOK);
+        ItemStack item = new ItemStack(Material.ENCHANTED_BOOK);
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
             meta.setDisplayName("§e§lHow to Use");
             meta.setLore(Arrays.asList(
                 "",
-                "§7Click on any poop item above",
+                "§7Click on any item above",
                 "§7to receive it in your inventory!",
                 "",
-                "§6Throwable Poop §7- Throw at enemies",
-                "§6Poop Block §7- Place as a hazard",
-                "§2Slimy Poop §7- Drink for effects",
+                "§6§lPoop Category:",
+                "§7- Throwable, Placeable, Slimy Poop",
+                "§7- Hold Shift with empty hand (3s) to poop",
                 "",
-                "§eHave fun with poop! 💩"
+                "§b§lRay Guns:",
+                "§7- Shrink/Grow/Normal Ray (change size)",
+                "§7- Ray Gun weapon (needs ammo)",
+                "",
+                "§e§lCameras:",
+                "§7- Camera (take screenshots)",
+                "§7- Security Cameras (max 7)",
+                "§7- Tablet (view cameras)",
+                "",
+                "§a§lEatables:",
+                "§7Right-click: Soil, Snow, Sand, Dust,",
+                "§7Flowers, and Leaves to eat them!"
             ));
             item.setItemMeta(meta);
         }
@@ -123,7 +145,8 @@ public class PoopMenuCommand implements CommandExecutor, Listener {
         ItemStack clickedItem = event.getCurrentItem();
         if (clickedItem == null || clickedItem.getType() == Material.AIR) return;
 
-        // Give the player the clicked poop item
+        // Give the player the clicked item
+        // Poop Items
         if (PoopItems.isThrowablePoop(clickedItem)) {
             player.getInventory().addItem(PoopItems.createThrowablePoop());
             player.sendMessage("§6You received: §eThrowable Poop!");
@@ -133,6 +156,34 @@ public class PoopMenuCommand implements CommandExecutor, Listener {
         } else if (PoopItems.isSlimyPoop(clickedItem)) {
             player.getInventory().addItem(PoopItems.createSlimyPoop());
             player.sendMessage("§2You received: §aSlimy Poop!");
+        }
+        // Ray Guns
+        else if (RayGunItems.isShrinkRay(clickedItem)) {
+            player.getInventory().addItem(RayGunItems.createShrinkRay());
+            player.sendMessage("§bYou received: §aShrink Ray!");
+        } else if (RayGunItems.isGrowRay(clickedItem)) {
+            player.getInventory().addItem(RayGunItems.createGrowRay());
+            player.sendMessage("§aYou received: §eGrow Ray!");
+        } else if (RayGunItems.isNormalRay(clickedItem)) {
+            player.getInventory().addItem(RayGunItems.createNormalRay());
+            player.sendMessage("§7You received: §eNormal Ray!");
+        } else if (RayGunItems.isRayGun(clickedItem)) {
+            player.getInventory().addItem(RayGunItems.createRayGun());
+            player.sendMessage("§cYou received: §eRay Gun (Weapon)!");
+        } else if (RayGunItems.isRayGunAmmo(clickedItem)) {
+            player.getInventory().addItem(RayGunItems.createRayGunAmmo());
+            player.sendMessage("§dYou received: §eRay Gun Ammo!");
+        }
+        // Cameras
+        else if (CameraItems.isCamera(clickedItem)) {
+            player.getInventory().addItem(CameraItems.createCamera());
+            player.sendMessage("§eYou received: §aCamera!");
+        } else if (CameraItems.isSecurityCamera(clickedItem)) {
+            player.getInventory().addItem(CameraItems.createSecurityCamera());
+            player.sendMessage("§cYou received: §eSecurity Camera!");
+        } else if (CameraItems.isTablet(clickedItem)) {
+            player.getInventory().addItem(CameraItems.createTablet());
+            player.sendMessage("§9You received: §eTablet!");
         }
     }
 }
