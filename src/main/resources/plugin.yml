@@ -1,0 +1,25 @@
+name: ThePoopMod
+version: '${version}'
+main: com.poopstuff.PoopPlugin
+api-version: '1.21'
+author: PoopStuff
+description: A Minecraft plugin that adds poop-related gameplay mechanics with various effects
+
+commands:
+  poopmenu:
+    description: Opens the Poop Mod menu to access all poop items
+    usage: /<command>
+    aliases: [poopgui, pm]
+  givepoop:
+    description: Give poop items to players
+    usage: /<command> <player> <item>
+    permission: poopmod.admin
+    aliases: [gp]
+
+permissions:
+  poopmod.menu:
+    description: Access to the poop menu
+    default: true
+  poopmod.admin:
+    description: Admin permissions for giving items
+    default: op
