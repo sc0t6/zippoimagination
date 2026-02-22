@@ -57,8 +57,8 @@ This mod provides what I have imagined and some stupid stuff that basically suck
 - Does incredible damage (15 ❤) to people
 - Requires ammo. To get it you need a nether star and 2 eye of enders (craft in menu)
 - 50 block range with laser beam effects
-  
-  <details>
+
+<details>
 
 <details>
  <summary>Cameras</summary>
