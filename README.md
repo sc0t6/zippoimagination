@@ -1,19 +1,18 @@
 # Zippo's Imagination
-![](https://img.shields.io/github/downloads/sc0t6/thepoopmod/total)
-![](https://img.shields.io/github/license/sc0t6/thepoopmod)
 
-Broken Humour approved inside Minecraft Java 1.21.x (Spigot)
+Broken Humour approved inside Minecraft Java 1.21.x
 
 > [!CAUTION]
 > This mod is still in beta, which means that there will be bugs and some incompatibilities.
 
 This mod provides what I have imagined and some stupid stuff that basically sucked in general but could also be funny for some people.
-
-## Features
+=======
+![](https://img.shields.io/github/downloads/sc0t6/zippoimagination/total)
+![](https://img.shields.io/github/license/sc0t6/zippoimagination)
 
 <details>
  <summary>Poop Mod Category</summary>
-
+ 
 ### Throwable Poop
 - Throw poop at targets
 - Inflicts Nausea effect on hit
@@ -28,6 +27,7 @@ This mod provides what I have imagined and some stupid stuff that basically suck
 - Inflicts Poison and Nausea effects when consumed
 
 ### Player Poop
+
 - By holding shift with empty hand for 3 seconds, it poops out the placeable poop on the block behind you
 - 10 second cooldown between poops
 
@@ -57,8 +57,8 @@ This mod provides what I have imagined and some stupid stuff that basically suck
 - Does incredible damage (15 ❤) to people
 - Requires ammo. To get it you need a nether star and 2 eye of enders (craft in menu)
 - 50 block range with laser beam effects
-
-</details>
+  
+  <details>
 
 <details>
  <summary>Cameras</summary>
@@ -98,57 +98,33 @@ This mod provides what I have imagined and some stupid stuff that basically suck
 
 </details>
 
-## Commands
-
-### `/poopmenu` (aliases: `/poopgui`, `/pm`)
-Opens the main menu displaying all available items. Click on items to receive them.
-- **Permission:** `poopmod.menu` (default: all players)
-
-### `/givepoop <player> <type> [amount]`
-Give items to players (admin only)
-- **Usage:** `/givepoop Steve throwable 16`
-- **Types:** `throwable`, `placeable`, `slimy`
-- **Permission:** `poopmod.admin` (default: ops)
-
-## Installation
-
-### For Server Owners
-1. Download the latest plugin JAR from releases
-2. Place it in your server's `plugins/` directory
-3. Restart your server
-4. Use `/poopmenu` to get started!
-
-### For Players
+installation:
 Just get it from the releases on the right or if you're on mobile, scroll down till you see releases.
 
 ## Building from Source
 
 **Requires:** Java 21 and Gradle
+    
+    clone this project
 
-```bash
-# Clone the repository
-git clone https://github.com/sc0t6/thepoopmod.git
-cd thepoopmod
-
-# Build the plugin
+Build the plugin with a command (requries a app like InteliJ IDEA):
 ./gradlew build
 
-# The plugin JAR will be in: build/libs/ThePoopMod-1.0.0.jar
-```
+The plugin JAR will be in: build/libs
 
-## Technical Details
+Technical Details
 
 **Server Type:** Spigot
-**Minecraft Version:** 1.21.4+
+**Minecraft Version:** 1.21.11
 **Java Version:** 21
 
-### Item Implementation
-- All custom items use vanilla materials with custom metadata
-- Items have enchant glows and custom model data for resource pack support
-- Security cameras use Observer blocks with location tracking
-- Ray guns use GENERIC_SCALE attribute for size manipulation (1.20.5+)
+ </details>
 
-## F.A.Q.
+### Installation
+
+Just get it from the releases on the right or if your on mobile, scroll down till you see releases.
+
+# F.A.Q.
 
 ### Will this ever be backported?
 Answer: **Most likely yes**
@@ -162,6 +138,15 @@ Answer: **Maybe.** It will be VERY hard but I will try to. If you're a developer
 ### How can I get the items and use the mod?
 Answer: It's either you can go in **creative** or just use **/poopmenu** in survival/creative. All items are available in the menu!
 
+### What do I do if theres a bug?
+Answer: **Make an issue on this github** or **send me a text on discord** (mc.zippo) for the bug
+
+### Will this be on other mod loaders?
+Answer: **Maybe.** it will be VERY hard but I will try to. If your a developer you can maybe help me :)
+
+### How can I get the items and use the mod?
+Answer: It's either you can go in **creative** or just **craft/find them in survival** which is pretty easy to find or craft for some items and others. **Ray Gun and its ammo** is probably the **hardest** on this list.
+
 ### Is there gonna be more items/blocks/entities?
 Answer: **Yes.** Sometimes though the updates will just be bug fixes or some improvements.
 
@@ -173,8 +158,3 @@ Answer: This is a **server-side plugin** that works on Spigot/Paper servers. Som
 For issues or questions, please:
 - Open an issue on GitHub
 - Contact mc.zippo on Discord
-
----
-
-**Server Type:** Spigot Plugin
-**Have fun breaking Minecraft with weird stuff! 💩🔫📸**
