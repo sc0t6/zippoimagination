@@ -168,7 +168,7 @@ public class RayGunListener implements Listener {
      * Set player scale (size)
      */
     private void setPlayerScale(Player player, double scale) {
-        AttributeInstance attribute = player.getAttribute(Attribute.GENERIC_SCALE);
+        AttributeInstance attribute = player.getAttribute(Attribute.SCALE);
         if (attribute != null) {
             attribute.setBaseValue(scale);
         }
@@ -178,7 +178,7 @@ public class RayGunListener implements Listener {
      * Set entity scale (size)
      */
     private void setEntityScale(LivingEntity entity, double scale) {
-        AttributeInstance attribute = entity.getAttribute(Attribute.GENERIC_SCALE);
+        AttributeInstance attribute = entity.getAttribute(Attribute.SCALE);
         if (attribute != null) {
             attribute.setBaseValue(scale);
         }
