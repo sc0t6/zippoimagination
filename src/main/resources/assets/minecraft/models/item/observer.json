@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/observer",
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 3002
+      },
+      "model": "zippoimagination:item/security_camera"
+    }
+  ]
+}

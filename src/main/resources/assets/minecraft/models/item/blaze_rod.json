@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "minecraft:item/blaze_rod"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 2001
+      },
+      "model": "zippoimagination:item/shrink_ray"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2002
+      },
+      "model": "zippoimagination:item/grow_ray"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2003
+      },
+      "model": "zippoimagination:item/normal_ray"
+    }
+  ]
+}

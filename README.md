@@ -98,11 +98,24 @@ This mod provides what I have imagined and some stupid stuff that basically suck
 
 </details>
 
+## Getting Items
+
+### Option 1: Crafting (Survival Mode) ⚒️
+All items are **fully craftable**! Check out [CRAFTING_GUIDE.md](CRAFTING_GUIDE.md) for all recipes.
+- Items appear in vanilla recipe book
+- Balanced recipes for survival gameplay
+
+### Option 2: Menu Command 📦
+Use `/poopmenu` for instant access to all items!
+- Great for creative mode or testing
+- No gathering required
+
 ## Commands
 
 ### `/poopmenu` (aliases: `/poopgui`, `/pm`)
 Opens the main menu displaying all available items. Click on items to receive them.
 - **Permission:** `poopmod.menu` (default: all players)
+- **Best for:** Creative mode or quick testing
 
 ### `/givepoop <player> <type> [amount]`
 Give items to players (admin only)
@@ -116,10 +129,21 @@ Give items to players (admin only)
 1. Download the latest plugin JAR from releases
 2. Place it in your server's `plugins/` directory
 3. Restart your server
-4. Use `/poopmenu` to get started!
+4. **(Optional)** Extract and distribute the resource pack for custom models
+5. Players can craft items or use `/poopmenu`!
 
 ### For Players
-Just get it from the releases on the right or if you're on mobile, scroll down till you see releases.
+1. Download the plugin JAR from releases (or get from server)
+2. **(Optional)** Install the resource pack for custom item models
+3. Join a server running the plugin
+4. **Craft items** (see [CRAFTING_GUIDE.md](CRAFTING_GUIDE.md)) or use `/poopmenu`
+
+### Custom Models (Optional) 🎨
+Want custom textures for items? See [RESOURCE_PACK_GUIDE.md](RESOURCE_PACK_GUIDE.md) for:
+- How to extract the resource pack from the JAR
+- Adding your own 16x16 textures
+- Creating 3D models with Blockbench
+- Installing the resource pack
 
 ## Building from Source
 
@@ -138,15 +162,25 @@ cd thepoopmod
 
 ## Technical Details
 
-**Server Type:** Spigot
-**Minecraft Version:** 1.21.4+
+**Server Type:** Spigot/Paper
+**Minecraft Version:** 1.21.3+
 **Java Version:** 21
+**Resource Pack Format:** 34 (Minecraft 1.21+)
+
+### Features
+✅ **Crafting System** - All items craftable in survival mode
+✅ **Recipe Book** - Recipes appear in vanilla recipe book
+✅ **Custom Models** - Resource pack support with CustomModelData
+✅ **Size Manipulation** - Uses `Attribute.SCALE` (1.21.2+)
+✅ **Server-Side Only** - No client mods required (resource pack optional)
 
 ### Item Implementation
 - All custom items use vanilla materials with custom metadata
-- Items have enchant glows and custom model data for resource pack support
+- Items have enchant glows and `CustomModelData` for resource pack support
 - Security cameras use Observer blocks with location tracking
-- Ray guns use GENERIC_SCALE attribute for size manipulation (1.20.5+)
+- Ray guns use `Attribute.SCALE` for size manipulation (1.21.2+)
+- Crafting recipes integrate with vanilla recipe book
+- 11 craftable items + eatables system
 
 ## F.A.Q.
 
@@ -160,7 +194,12 @@ Answer: **Make an issue on this github** or **send me a text on discord** (mc.zi
 Answer: **Maybe.** It will be VERY hard but I will try to. If you're a developer you can maybe help me :)
 
 ### How can I get the items and use the mod?
-Answer: It's either you can go in **creative** or just use **/poopmenu** in survival/creative. All items are available in the menu!
+Answer: **Three ways!**
+1. **Craft them** in survival mode (see [CRAFTING_GUIDE.md](CRAFTING_GUIDE.md))
+2. Use **/poopmenu** command (creative or survival)
+3. Use **/givepoop** admin command
+
+All recipes appear in the vanilla recipe book!
 
 ### Is there gonna be more items/blocks/entities?
 Answer: **Yes.** Sometimes though the updates will just be bug fixes or some improvements.

@@ -9,15 +9,21 @@ import com.poopstuff.listeners.PlayerPoopListener;
 import com.poopstuff.listeners.RayGunListener;
 import com.poopstuff.listeners.SlimyPoopListener;
 import com.poopstuff.listeners.ThrowablePoopListener;
+import com.poopstuff.recipes.RecipeManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PoopPlugin extends JavaPlugin {
 
     private static PoopPlugin instance;
+    private RecipeManager recipeManager;
 
     @Override
     public void onEnable() {
         instance = this;
+
+        // Register recipes
+        recipeManager = new RecipeManager(this);
+        recipeManager.registerAllRecipes();
 
         // Register commands
         PoopMenuCommand poopMenuCommand = new PoopMenuCommand();
@@ -34,12 +40,18 @@ public class PoopPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CameraListener(), this);
         getServer().getPluginManager().registerEvents(new EatablesListener(), this);
 
-        getLogger().info("The Poop Mod has been enabled! Type /poopmenu to get started!");
+        getLogger().info("Zippo's Imagination has been enabled!");
+        getLogger().info("Use /poopmenu to get items or craft them in survival!");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("The Poop Mod has been disabled!");
+        // Unregister recipes
+        if (recipeManager != null) {
+            recipeManager.unregisterAllRecipes();
+        }
+
+        getLogger().info("Zippo's Imagination has been disabled!");
     }
 
     public static PoopPlugin getInstance() {
